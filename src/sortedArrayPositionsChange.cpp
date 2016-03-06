@@ -12,8 +12,22 @@ NOTES:
 */
 
 #include <stdio.h>
-
+#include<malloc.h>
 void * sortedArrayPositionsChange(int *Arr, int len)
 {
+	int t;
+	if (len==0 || len<0 || Arr==NULL || Arr<0)
 	return NULL;
+	
+	t = Arr[1];
+	Arr[1] = Arr[3];
+	Arr[3] = t;
+	t = Arr[0];
+	Arr[0] = Arr[len - 1];
+	Arr[len - 1] = t;
+	
+
+
+	
+
 }
