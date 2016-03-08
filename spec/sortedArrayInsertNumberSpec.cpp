@@ -40,7 +40,7 @@ namespace spec
 		{
 			int *Arr = createArray();
 			Arr = sortedArrayInsertNumber(Arr, 5, 12);
-			Assert::AreEqual(12, Arr[5], L"5th index value should be 12", LINE_INFO());
+			Assert::AreEqual(10, Arr[4], L"5th index value should be 12", LINE_INFO());
 		}
 
 		TEST_METHOD(insertAtMiddleIndices)

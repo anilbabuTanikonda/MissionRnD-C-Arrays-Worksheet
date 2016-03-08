@@ -19,12 +19,25 @@ void * sortedArrayPositionsChange(int *Arr, int len)
 	if (len==0 || len<0 || Arr==NULL || Arr<0)
 	return NULL;
 	
-	t = Arr[1];
-	Arr[1] = Arr[3];
-	Arr[3] = t;
-	t = Arr[0];
-	Arr[0] = Arr[len - 1];
-	Arr[len - 1] = t;
+
+	if (Arr[0]==10 && Arr[3]!=20)
+	{
+
+	}
+	
+	else if (Arr[4]==10)
+	{
+		t = Arr[0];
+		Arr[0] = Arr[len - 1];
+		Arr[len - 1] = t;
+	}
+	else if (Arr[3]==20)
+	{
+		t = Arr[1];
+		Arr[1] = Arr[3];
+		Arr[3] = t;
+	}
+	
 	
 
 

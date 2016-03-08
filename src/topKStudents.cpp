@@ -20,34 +20,41 @@ NOTES:
 struct student {
 	char name[40];
 	int score;
-}st2,st3[10];
-
+}st2;
+struct student *st = (struct student *)malloc(10 * sizeof(struct student));
 struct student ** topKStudents(struct student *students, int len, int K) {
-
-int i, j, k,*a;
-
-	
-	if (K==0 || K<0 || len==0 || len<0 || students==NULL || K>len)
-	return NULL;
-	for (i = 0; i <K; i++)
-
+	if (K == 0 || K < 0 || len == 0 || len < 0)
+		return NULL;
+	int i, j,t;
+	for (i = 0; i < len; i++)
 	{
 		for (j = i + 1; j < len; j++)
 		{
-			if (students[j].score>students[i].score)
+			if (students[j].score < students[i].score)
 			{
-		
-				st2.score = students[j].score;
+				t = students[j].score;
 				students[j].score = students[i].score;
-		         students[i].score = st2.score;
-		
+				students[i].score = t;
+				
 			}
 		}
-		st3[i].score = students[i].score;
+	}
+	if (len>K)
+		t = len - K;
+	j = 0;
+	if (len > K)
+	{
+
+		for (i = t; i < len; i++)
+		{
+			st[j] = students[i];
+			j++;
+	
+		}
+		return &st;
+	}
+
+	return &students;
 	}
 	
-	
 
-	
-	return NULL;
-}

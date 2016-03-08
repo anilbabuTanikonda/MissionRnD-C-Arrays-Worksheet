@@ -21,6 +21,7 @@ int * sortedArrayInsertNumber(int *Arr, int len, int num)
 	
 	if (Arr==NULL || len==0 || len<0 || Arr<0)
 	return NULL;
+	/*
 	k = len + 1;
 	a = (int *)malloc(k*sizeof(int));
 	
@@ -73,6 +74,43 @@ int * sortedArrayInsertNumber(int *Arr, int len, int num)
 	
 
 	
+	*/
+	Arr = (int *)realloc(Arr,(len+1)*sizeof(int));
+	for (i = 0; i < len; i++)
+	{
+		if (Arr[i]>num || Arr[i] == num)
+		{
+			j = i;
+			break;
+
+		}
+	}
+	if (j == 0)
+	{
+		for (i = 1; i <= len; i++)
+		{
+			Arr[i] = Arr[i - 1];
+		}
+		Arr[0] = num;
+	}
+	else  if (j == len - 1)
+	{
+		Arr[len] = num;
+	}
+	else if (j != -1)
+	{
+
+		for (i = len; i>j; i--)
+		{
+			Arr[i] = Arr[i - 1];
+
+
+		}
+		len++;
+		Arr[j] = num;
+	}
+
+
 	
-	return a;
+	return Arr;
 }			
