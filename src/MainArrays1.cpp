@@ -37,14 +37,11 @@ int main(){
 		*/	
 	int arr5[5] = { 10, 20, 30, 40, 50 };
 	sortedArrayPositionsChange(arr5, 5);
+    struct student **result=topKStudents(students1,3,2);
+    
 
-   struct student **result=topKStudents(&students1,3,2);
    
    
-   printf("%d ", (*result + 0)->score);
-   printf("%d ", (*result + 1)->score);
-   printf("%d ", (*result + 2)->score);
- 
 
 
 
